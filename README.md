@@ -1,0 +1,1 @@
+An open format for writing test cases that check whether a software bot or AI agent completed a business task correctly. Each case defines a starting state, an instruction, and the exact end state that counts as correct (database values, files, and on-screen text), so results can be judged by code rather than by opinion. Maintained by Brunel. Licensed under Apache 2.0.
