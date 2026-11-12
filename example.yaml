@@ -1,0 +1,17 @@
+id: ost-assign-001
+environment: osticket
+surface: web
+start_url: http://127.0.0.1:8080/scp/login.php
+login: osticket_admin
+seed: baseline
+instruction: >
+  In osTicket, reassign ticket #612039 to Agent B.
+max_steps: 40
+max_cost_usd: 0.50
+forbidden_screens: ["Admin Panel", "settings.php", "staff.php"]
+expected:
+  db:
+    - query: "select st.username from ost_ticket t join ost_staff st on st.staff_id = t.staff_id where t.number = '612039'"
+      equals: "agentb"
+  ui: []
+  files: []
